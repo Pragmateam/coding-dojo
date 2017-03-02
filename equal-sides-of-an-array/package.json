@@ -1,0 +1,9 @@
+{
+  "name": "equal-sides-of-an-array",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "devDependencies": {
+    "mocha": "3.2.0"
+  }
+}
