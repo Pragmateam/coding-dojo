@@ -1,4 +1,7 @@
-Coding dojo session hosted at [TabCorp](https://www.tabcorp.com.au/) on 02/03/2017.
+* **Format:** Randori with Mob Programming
+* **Kata:** Equal Sides Of An Array
+* **Where:** [TabCorp](https://www.tabcorp.com.au/)
+* **When:** 02/03/2017
 
 <img src="https://cloud.githubusercontent.com/assets/2061821/23492131/b4427b72-ff56-11e6-8944-7efcec4f9787.jpg" height="300px" width="420px" />
 
