@@ -1,9 +1,11 @@
 * **Format:** Mob Programming
 * **Kata:** Tennis Refactoring Kata
 * **Where:** [TabCorp](https://www.tabcorp.com.au/)
-* **When:** 15/03/2017
+* **When:** 15/03/2017 & 22/03/2017
 
 <img src="https://cloud.githubusercontent.com/assets/2061821/23975736/cecdcae2-0a36-11e7-877d-d03ea4981966.jpg" height="340px" width="520px" />
+
+<img src="https://cloud.githubusercontent.com/assets/2061821/24186570/f19ea6a4-0f2c-11e7-850b-7ea8a86cb28e.jpg" height="340px" width="520px" />
 
 ## Kata: Tennis Refactoring Kata
 
