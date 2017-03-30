@@ -1,101 +1,173 @@
-// NEW GAME
-// P1 LEADING
-// P2 LEADING
-// DEUCE
-// P1 ADV
-// P2 ADV
-// P1 WIN (END)
-// P2 WIN (END)
-
-// const NewGameState = {
-//   wonPoint: (context, playerName) => {
-//     context.state = Player1Leading;
-//   },
-//   getScore: () => {}
-// };
-//
-// const Tennis = (player1, player2) {
-//   const state = NewGameState;
-//
-//   return {
-//     wonPoint: () => state.wonPoint(),
-//     getScore: () => state.getScore()
-//   };
-// }
-
-
-var TennisGame1 = function(player1Name, player2Name) {
-    this.scores = {};
-    this.scores[player1Name] = 0;
-    this.scores[player2Name] = 0;
-    this.playName1 = player1Name;
-    this.playName2 = player2Name;
-    this.score = 'Love-All';
-    // this.state =
+const SCORE_TO_DESCRIPTION = {
+  0: 'Love',
+  1: 'Fifteen',
+  2: 'Thirty',
+  3: 'Forty'
 };
 
-TennisGame1.prototype.wonPoint = function(playerName) {
-    this.scores[playerName] = this.scores[playerName] + 1;
-    this.score = computeScore(this.scores);
+const NewGame = {
+  p1Scores (context) {
+    context.p1Score++;
+    context.state = P1Leading;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    context.state = P2Leading;
+  },
+  getScore (context) {
+    return 'Love-All';
+  }
 };
 
-TennisGame1.prototype.getScore = function() {
-    return this.score;
+const P1Leading = {
+  p1Scores (context) {
+    context.p1Score++;
+    if (context.p1Score === 4) context.state = P1Wins;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    if (context.p1Score === context.p2Score) {
+      context.state = {
+        1: FifteenAll,
+        2: ThirtyAll,
+        3: Deuce
+      }[context.p2Score];
+    }
+  },
+  getScore (context) {
+    return `${SCORE_TO_DESCRIPTION[context.p1Score]}-${SCORE_TO_DESCRIPTION[context.p2Score]}`
+  }
 };
 
-function computeScore(scores) {
-  var score = '';
-  const [scorePlayer1, scorePlayer2] = Object.values(scores);
-  if (scorePlayer1 === scorePlayer2) {
-      score = getDescriptionForEqualScore(scorePlayer1);
+const P2Leading = {
+  p1Scores (context) {
+    context.p1Score++;
+
+    if (context.p1Score === context.p2Score) {
+      context.state = {
+        1: FifteenAll,
+        2: ThirtyAll,
+        3: Deuce
+      }[context.p2Score];[context.p1Score];
+    }
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    if (context.p2Score === 4) context.state = P2Wins;
+  },
+  getScore (context) {
+    const map = {
+      0: 'Love',
+      1: 'Fifteen',
+      2: 'Thirty',
+      3: 'Forty'
+    };
+    return `${map[context.p1Score]}-${map[context.p2Score]}`
   }
-  else if (scorePlayer1 >= 4 || scorePlayer2 >= 4) {
-      score = getWinnerOrAdvantage(scores);
+};
+
+const FifteenAll = {
+  p1Scores (context) {
+    context.p1Score++;
+    context.state = P1Leading;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    context.state = P2Leading;
+  },
+  getScore (context) {
+    return 'Fifteen-All'
   }
-  else {
-    score = getPointScore(scores);
+};
+
+const ThirtyAll = {
+  p1Scores (context) {
+    context.p1Score++;
+    context.state = P1Leading;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    context.state = P2Leading;
+  },
+  getScore (context) {
+    return 'Thirty-All'
   }
-  return score;
-}
+};
 
-function getDescriptionForEqualScore(scoreParameter) {
-  const scoreDescriptions = {
-    0: 'Love-All',
-    1: 'Fifteen-All',
-    2: 'Thirty-All'
+const Deuce = {
+  p1Scores (context) {
+    context.p1Score++;
+    context.state = P1Advantage;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    context.state = P2Advantage;
+  },
+  getScore (context) {
+    return 'Deuce'
   }
-  return scoreDescriptions[scoreParameter] || 'Deuce'
-}
+};
 
-function getWinnerOrAdvantage(scores) {
-  const leaderPlayer = getLeaderPlayer(scores);
-
-  if (isThereAWinner(scores))
-    return "Win for " + leaderPlayer;
-  return "Advantage " + leaderPlayer;
-}
-
-function isThereAWinner(scores) {
-  const [scorePlayer1, scorePlayer2] = Object.values(scores);
-  return Math.abs(scorePlayer1 - scorePlayer2) >= 2;
-}
-
-function getLeaderPlayer(scores) {
-  const [player1Name, player2Name] = Object.keys(scores);
-  if (scores[player1Name] > scores[player2Name])
-    return player1Name;
-  return player2Name;
-}
-
-function getPointScore(scores){
-  const pointDescription =  {
-    0: 'Love',
-    1: 'Fifteen',
-    2: 'Thirty',
-    3: 'Forty'
+const P1Advantage = {
+  p1Scores (context) {
+    context.p1Score++;
+    context.state = P1Wins;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    context.state = Deuce;
+  },
+  getScore (context) {
+    return `Advantage ${context.p1Name}`
   }
-  const [scorePlayer1, scorePlayer2] = Object.values(scores);
-  return pointDescription[scorePlayer1]+ '-'+ pointDescription[scorePlayer2];
+};
+
+const P2Advantage = {
+  p1Scores (context) {
+    context.p1Score++;
+    context.state = Deuce;
+  },
+  p2Scores (context) {
+    context.p2Score++;
+    context.state = P2Wins;
+  },
+  getScore (context) {
+    return `Advantage ${context.p2Name}`
+  }
+};
+
+const P1Wins = {
+  p1Scores (context) {},
+  p2Scores (context) {},
+  getScore (context) {
+    return `Win for ${context.p1Name}`
+  }
+};
+
+const P2Wins = {
+  p1Scores (context) {},
+  p2Scores (context) {},
+  getScore (context) {
+    return `Win for ${context.p2Name}`
+  }
+};
+
+var TennisGame1 = function(player1, player2) {
+  const self = {
+    state: NewGame,
+    p1Score: 0,
+    p2Score: 0,
+    p1Name: player1,
+    p2Name: player2
+  };
+
+  return {
+    wonPoint: (playerName) => {
+      if (playerName === player1) self.state.p1Scores(self);
+      else self.state.p2Scores(self);
+    },
+    getScore: () => self.state.getScore(self)
+  };
 }
 
 if (typeof window === "undefined") {
