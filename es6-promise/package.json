@@ -1,0 +1,10 @@
+{
+  "name": "es6-promise",
+  "scripts": {
+    "test": "mocha *.js -w"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "3.2.0"
+  }
+}
