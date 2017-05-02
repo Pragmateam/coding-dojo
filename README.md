@@ -1,5 +1,7 @@
 ## Coding dojo sessions
 
+This repository's description came from this reference: https://code.joejag.com/2009/the-coding-dojo.html
+
 > Our goal is to learn, teach and improve our technical practices and
 > communication skills with fellow software developers in a non-competitive and
 > inclusive setting.
