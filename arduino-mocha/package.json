@@ -1,0 +1,16 @@
+{
+  "name": "arduino_hello_world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+   "scripts": {
+    "test": "mocha -R my-report -r setup.js",
+    "test:watch": "npm test -- --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^0.10.13",
+    "mocha": "^3.3.0"
+  }
+}
