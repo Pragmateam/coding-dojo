@@ -14,7 +14,7 @@ practice as equals.
 
 The premise of a Coding Dojo is to promote continuous learning in a safe
 enfironment. It is both non-competitive and inclusive. People of different skill
-levels collaborate together, encouraging each other to talk onpenly about design
+levels collaborate together, encouraging each other to talk openly about design
 and techniques.
 
 We believe that Coding Dojo represents a different challenge to developers. It
