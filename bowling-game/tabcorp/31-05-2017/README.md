@@ -1,3 +1,8 @@
+* **Format:** Mob Programming
+* **Kata:** The Bowling Game
+* **Where:** [TabCorp](https://www.tabcorp.com.au/)
+* **When:** 31/05/2017
+
 ## Kata: The Bowling Game
 
 ### Description:
