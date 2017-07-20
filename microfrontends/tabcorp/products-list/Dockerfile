@@ -4,7 +4,7 @@ COPY package.json .
 RUN npm install
 COPY . .
 
-ENV PUBLIC_URL https://microfrontends.herokuapp.com/products-list
+ENV PUBLIC_URL http://localhost:3002
 
 RUN npm run build
 RUN npm run transpile

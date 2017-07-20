@@ -14,15 +14,13 @@ server.get('/', (req, res) => {
     const rootElem = '<div id="products-list-root">';
     const renderedApp = renderToString(React.createElement(App, null));
 
-    setTimeout(() => {
-      res.send(html.replace(rootElem, rootElem + renderedApp));
-    }, 5000);
+    res.send(html.replace(rootElem, rootElem + renderedApp));
   });
 });
 
 server.use(express.static('build'));
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3002;
 server.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
