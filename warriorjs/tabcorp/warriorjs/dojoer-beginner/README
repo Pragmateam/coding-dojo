@@ -1,0 +1,31 @@
+Level 4
+
+You can hear bow strings being stretched.
+
+Tip: No new abilities this time, but you must be careful not to rest while taking damage. Save a `_health` variable and compare it on each turn to see if you're taking damage.
+
+
+╔═══════╗
+║@ Sa S>║
+╚═══════╝
+
+  > = stairs
+  @ = Dojoer
+  a = archer
+  S = thickSludge
+
+
+Warrior abilities:
+
+  warrior.walk()
+
+  warrior.attack()
+
+  warrior.feel()
+
+  warrior.health()
+
+  warrior.rest()
+
+
+When you're done editing Player.js, run the warriorjs command again.
