@@ -1,0 +1,41 @@
+Level 9
+
+Time to hone your skills and apply all of the abilities that you have learned.
+
+Tip: Watch your back.
+
+
+╔═══════════╗
+║>Ca  @ S wC║
+╚═══════════╝
+
+  > = stairs
+  @ = lethaldose
+  a = archer
+  S = thickSludge
+  w = wizard
+  C = captive
+
+
+Warrior abilities:
+
+  warrior.walk()
+
+  warrior.attack()
+
+  warrior.feel()
+
+  warrior.health()
+
+  warrior.rest()
+
+  warrior.rescue()
+
+  warrior.pivot()
+
+  warrior.look()
+
+  warrior.shoot()
+
+
+When you're done editing Player.js, run the warriorjs command again.
