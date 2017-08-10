@@ -1,9 +1,6 @@
 const Resting = {
   turn: (context, warrior) => {
-    if (context.isUnderAttack(warrior)) {
-      context.state = Walking;
-      context.state.turn(context, warrior);
-    } else if (warrior.health() == 20) {
+    if (context.isUnderAttack(warrior) || warrior.health() == 20) {
       context.state = Walking;
       context.state.turn(context, warrior);
     } else {
