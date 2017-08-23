@@ -32,7 +32,11 @@ const Walking = {
   turn: (context, warrior) => {
     const inSight = warrior.look().find(view => !view.isEmpty());
 
-    if (inSight && inSight.isEnemy()) {
+    if (warrior.feel().isStairs() && context.shouldGoBack) {
+      context.shouldGoBack = false
+      context.state = Pivoting;
+      context.state.turn(context, warrior);
+    } else if (inSight && inSight.isEnemy()) {
       context.state = Shooting;
       context.state.turn(context, warrior);
     } else if (warrior.feel().isCaptive()) {
@@ -52,9 +56,15 @@ const Walking = {
 
 const Starting = {
   turn: (context, warrior) => {
-    const inSight = warrior.look('backward').find(view => !view.isEmpty());
+    const inSightBackward = warrior.look('backward').find(view => !view.isEmpty());
+    const inSight = warrior.look().find(view => !view.isEmpty());
+
     if (inSight && inSight.isEnemy()) {
-      context.state = Walking;
+      context.shouldGoBack = true
+    }
+
+    if (inSightBackward && inSightBackward.isEnemy()) {
+      context.state = Pivoting;
     } else {
       context.state = WalkingBackward;
     }

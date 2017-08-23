@@ -1,11 +1,13 @@
 * **Format:** Mob Programming
 * **Kata:** WarriorJS
 * **Where:** [TabCorp](https://www.tabcorp.com.au/)
-* **When:** 02/08/2017, 09/08/2017
+* **When:** 02/08/2017, 09/08/2017 and 23/08/2017
 
 <img src="https://user-images.githubusercontent.com/2061821/28901072-19df4a86-7839-11e7-954c-3e2868ac7276.jpg" width="620px" />
 
 <img src="https://user-images.githubusercontent.com/2061821/29149436-82cec39a-7db7-11e7-83ee-4a1f97f75b89.jpg" width="620px" />
+
+<img src="https://user-images.githubusercontent.com/2061821/29605416-1f19c436-882e-11e7-8133-bf30a54760a1.png" width="620px" />
 
 ## State Graph
 
