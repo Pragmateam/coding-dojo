@@ -1,0 +1,10 @@
+<div style="border: solid 1px yellow; padding: 10px">
+    <span>{{ ::$ctrl.description }}</span>
+    <button
+      type="button"
+      ng-if="!$ctrl.done"
+      ng-click="$ctrl.markAsDone($ctrl.id)">
+      Complete
+    </button>
+    <button type="button">Remove</button>
+</div>
