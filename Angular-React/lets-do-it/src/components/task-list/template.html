@@ -1,0 +1,10 @@
+<div style="border: solid 1px blue; padding: 10px">
+    <div ng-repeat="task in ::$ctrl.tasks">
+      <task-item
+        description="task.description"
+        done="task.done"
+        id="task.id"
+      ></task-item>
+      <hr>
+    </div>
+</div>
