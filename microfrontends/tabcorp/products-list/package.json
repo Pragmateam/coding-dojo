@@ -42,7 +42,7 @@
     "react-dev-utils": "0.5.2",
     "safe-externals-loader": "1.0.4",
     "style-loader": "0.13.1",
-    "url-loader": "0.5.7",
+    "url-loader": "0.6.2",
     "webpack": "1.14.0",
     "webpack-dev-server": "2.10.1",
     "webpack-manifest-plugin": "1.1.0",
