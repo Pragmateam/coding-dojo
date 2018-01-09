@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "johnny-five": "^0.10.13",
+    "johnny-five": "^0.13.0",
     "mocha": "^3.3.0"
   }
 }
