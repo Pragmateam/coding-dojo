@@ -41,7 +41,7 @@
     "promise": "7.1.1",
     "react-dev-utils": "4.2.1",
     "safe-externals-loader": "1.0.4",
-    "style-loader": "0.13.1",
+    "style-loader": "0.19.1",
     "url-loader": "0.5.7",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.10.1",
