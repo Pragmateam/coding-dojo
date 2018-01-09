@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "warriorjs": "^3.0.0"
+    "warriorjs": "3.0.0"
   },
   "scripts": {
     "start": "warriorjs"
