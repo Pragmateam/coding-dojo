@@ -8,12 +8,12 @@ This repository's description came from this reference: https://code.joejag.com/
 
 <img width="356" src="https://cloud.githubusercontent.com/assets/2061821/23496537/d44b6ca0-ff72-11e6-9ac6-f3c2828beab3.png">
 
-A Coding Dojo is a programming session based around a simple coding challenge.
+A Coding Dojo is a programming session based on a simple coding challenge.
 Programmers of different skill levels are invited to engage in deliberate
 practice as equals.
 
 The premise of a Coding Dojo is to promote continuous learning in a safe
-enfironment. It is both non-competitive and inclusive. People of different skill
+environment. It is both non-competitive and inclusive. People of different skill
 levels collaborate together, encouraging each other to talk openly about design
 and techniques.
 
