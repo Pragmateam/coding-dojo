@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.6",
+    "angular": "^1.0.0",
     "redux": "^3.7.2"
   },
   "devDependencies": {
