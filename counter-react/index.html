@@ -1,0 +1,84 @@
+<html>
+
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script type="text/javascript">
+    const e = React.createElement;
+
+    const rootReducer = (state, action) => {
+      switch (action.type) {
+        case 'UP':
+          return {
+            counter: state.counter + 1
+          }
+        case 'DOWN':
+          return {
+            counter: state.counter - 1
+          }
+        default:
+          return state;
+      }
+    };
+
+
+    class Store {
+      constructor(initialState, reducer) {
+        this.state = initialState;
+        this.reducer = reducer;
+        this.listeners = [];
+      }
+
+      dispatch(action) {
+        this.state = this.reducer(this.state, action);
+        this.listeners.forEach(listener => listener());
+      }
+
+      subscribe(listener) {
+        this.listeners.push(listener);
+      }
+
+      getState() {
+        return this.state;
+      }
+    }
+
+    const store = new Store({ counter: 1 }, rootReducer);
+
+    const connect = (mapStateToProps) => {
+      return Component => {
+        return class extends React.Component {
+          constructor(props) {
+            super(props);
+
+            this.state = store.getState();
+
+            store.subscribe(() => {
+              this.setState(store.getState());
+            });
+          }
+
+          render() {
+            return e(Component, mapStateToProps(store.getState()));
+          }
+        };
+      };
+    };
+
+    const mapStateToProps = (state) => {
+      return { number: state.counter };
+    };
+
+    const Counter = connect(mapStateToProps)(props => {
+      const up = e('button', { onClick: () => store.dispatch({ type: 'UP' }) }, 'UP');
+      const down = e('button', { onClick: () => store.dispatch({ type: 'DOWN' }) }, 'DOWN');
+
+      return e('div', {}, up, props.number, down);
+    });
+
+    ReactDOM.render(e(Counter), document.getElementById('root'));
+  </script>
+</body>
+
+</html>
