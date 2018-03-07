@@ -1,0 +1,16 @@
+{
+  "name": "berlin-clock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react-app": "^3.1.1",
+    "jest": "^22.4.2",
+    "parcel-bundler": "^1.6.2"
+  }
+}
