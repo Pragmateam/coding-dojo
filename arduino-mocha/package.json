@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "johnny-five": "^0.13.0",
-    "mocha": "^3.3.0"
+    "mocha": "^5.0.0"
   }
 }
