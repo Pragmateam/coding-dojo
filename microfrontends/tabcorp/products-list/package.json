@@ -39,7 +39,7 @@
     "object-assign": "4.1.1",
     "postcss-loader": "2.0.10",
     "promise": "7.3.1",
-    "react-dev-utils": "4.2.1",
+    "react-dev-utils": "5.0.2",
     "safe-externals-loader": "1.0.4",
     "style-loader": "0.19.1",
     "url-loader": "0.5.7",
