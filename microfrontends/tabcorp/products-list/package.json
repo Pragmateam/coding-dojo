@@ -23,7 +23,7 @@
     "detect-port": "1.1.0",
     "dotenv": "2.0.0",
     "eslint": "4.17.0",
-    "eslint-config-react-app": "2.0.1",
+    "eslint-config-react-app": "3.0.4",
     "eslint-loader": "1.6.0",
     "eslint-plugin-flowtype": "2.21.0",
     "eslint-plugin-import": "2.8.0",
