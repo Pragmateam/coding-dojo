@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.6",
-    "redux": "^3.7.2"
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
