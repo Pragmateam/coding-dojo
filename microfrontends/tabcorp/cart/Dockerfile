@@ -1,4 +1,4 @@
-FROM node:8@sha256:c2bf519e9ccf3b24dbd2465cb5e2022f02e2d59c773df7cb1819fb9e665d6e85
+FROM node:8@sha256:c39babecddcccec897e4f07dbe405a093e6a9bbe12ca34fd4ed1f8cfaf781929
 
 RUN npm -g --unsafe-perm install elm
 RUN npm -g install http-server
