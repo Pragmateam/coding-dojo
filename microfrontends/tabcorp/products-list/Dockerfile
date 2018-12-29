@@ -1,4 +1,4 @@
-FROM node:latest@sha256:9b6cdb52e2f86ce667f0dcc68b8dcc4e1e9be84b49111196cd4cf51081548692
+FROM node:latest@sha256:61cd485dc5caad550a890b3ee85d5be53ea44288d61b83f7dc9ac801a91f2b22
 
 COPY package.json .
 RUN npm install
