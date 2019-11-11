@@ -4,6 +4,6 @@
     "test": "mocha -w"
   },
   "devDependencies": {
-    "mocha": "5.2.0"
+    "mocha": "6.2.2"
   }
 }
